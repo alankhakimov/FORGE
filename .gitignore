@@ -6,3 +6,5 @@ data/
 *.pth
 *.ckpt
 .ipynb_checkpoints/
+
+.venv/
