@@ -9,4 +9,4 @@ data/
 
 .venv/
 
-experiments/transfer_learning_001/pretrained_resanet18
+experiments/transfer_learning_001/pretrained_resanet18/
