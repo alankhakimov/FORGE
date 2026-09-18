@@ -1,4 +1,4 @@
-from data_loader import BUSBRAData, get_busbra_fold_loaders
+from data_loader import get_busbra_fold_loaders
 from torchvision import transforms
 import torch
 import torch.nn as nn
@@ -15,12 +15,13 @@ def main():
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
     
-    train_loader, val_loader = get_busbra_fold_loaders(
+    train_loader, val_loader, test_loader = get_busbra_fold_loaders(
         data_dir=data_dir,
         fold_num=1,
         cv_filename='5-fold-cv.csv',
         batch_size=32,
-        transform=standard_transform,
+        train_transform=standard_transform,
+        val_transform=standard_transform,
         num_workers=2
     )
 
