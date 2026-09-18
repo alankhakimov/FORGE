@@ -1,4 +1,4 @@
-from data_loader import get_busbra_fold_loaders
+from experiments.BUSBRA_data_loader import get_busbra_fold_loaders
 from torchvision import transforms
 import torch
 import torch.nn as nn

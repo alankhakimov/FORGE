@@ -35,6 +35,7 @@ def get_busbra_fold_loaders(
     test_transform=None,
     num_workers=2,
 ):
+    # Paths and DF Loading
     data_csv_path = os.path.join(data_dir, 'bus_data.csv')
     cv_csv_path = os.path.join(data_dir, cv_filename)
     image_dir = os.path.join(data_dir, 'Images')
@@ -47,6 +48,7 @@ def get_busbra_fold_loaders(
 
     # Test set: this round's held-out fold (NaN in valid_col identifies these)
     test_indices = df_merged[df_merged['kFold'] == fold_num].index.tolist()
+    
     # Train/val: split among the remaining rows
     train_indices = df_merged[df_merged[fold_col] == 1.0].index.tolist()
     val_indices = df_merged[df_merged[fold_col] == 0.0].index.tolist()
